@@ -2,3 +2,6 @@
 **/build/
 **/__pycache__/
 **/sdkconfig.old
+
+firmware/esp32/.vscode/
+firmware/esp32/managed_components/

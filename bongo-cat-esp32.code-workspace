@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "src/bongo_cat/esp32_firmware_bongo"
+			"path": "firmware/esp32"
 		}
 	],
 	"settings": {}
