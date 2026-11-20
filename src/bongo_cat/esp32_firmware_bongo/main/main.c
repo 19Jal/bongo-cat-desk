@@ -19,7 +19,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
-#include "driver/ledc.h"
+//#include "driver/ledc.h"
 #include "esp_timer.h"
 #include "esp_log.h"
 
@@ -191,13 +191,13 @@ static void paw_task(void *arg)
 
 void app_main(void)
 {
-    servos_init();
+    //servos_init();
     pc_link_init();
 
     evq = xQueueCreate(32, sizeof(uint8_t));
     configASSERT(evq);
 
-    xTaskCreate(paw_task, "paw", 3072, NULL, 6, NULL);
+    //xTaskCreate(paw_task, "paw", 3072, NULL, 6, NULL);
     xTaskCreate(rx_task,  "rx",  3072, NULL, 5, NULL);
 
     ESP_LOGI(TAG, "Bongo Cat ready (%s)", USE_NATIVE_USB ? "native USB" : "UART bridge");
