@@ -2,7 +2,7 @@
 send_key.py
 Bongo Cat Companion Bot - Windows side 
 
-Sends one byte to the ESP32-C3 Mini over USB Serial for every key press
+Sends one byte to the ESP32-S3 over USB Serial for every key press
 
 Protocol:
 'L' = left paw tap
