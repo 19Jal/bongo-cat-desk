@@ -21,10 +21,6 @@ void ui_draw(uint32_t taps, uint32_t kps, ui_paw_t paw)
 
     char buf[16];
 
-    /* top-left: total taps (fits up to 6 digits before reaching the cat's ear) */
-    snprintf(buf, sizeof(buf), "%lu", (unsigned long)(taps % 1000000));
-    sh1106_text(0, 0, buf, 1);
-
     /* top-right: keys per second, right-aligned */
     snprintf(buf, sizeof(buf), "%lu/s", (unsigned long)(kps > 99 ? 99 : kps));
     int w = (int)strlen(buf) * 6 - 1;
