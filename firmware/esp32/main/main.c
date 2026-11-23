@@ -181,7 +181,7 @@ static void display_task(void *arg)
     }
 
     uint32_t kps = 0, window_start = now_ms(), window_taps = 0;
-    uint32_t shown_taps = UINT32_MAX, shown_kps = UINT32_MAX;
+    uint32_t shown_kps = UINT32_MAX;
     int      shown_paws = -1;
     bool     flush_error_logged = false;
 
@@ -206,14 +206,13 @@ static void display_task(void *arg)
         }
 
         /* Only push a new frame over I2C when something on screen changed. */
-        if (taps != shown_taps || kps != shown_kps || (int)paws != shown_paws) {
-            ui_draw(taps, kps, paws);
+        if (kps != shown_kps || (int)paws != shown_paws) {
+            ui_draw(kps, paws);
             esp_err_t err = sh1106_flush();
             if (err != ESP_OK && !flush_error_logged) {
                 ESP_LOGW(TAG, "OLED flush failed: %s", esp_err_to_name(err));
                 flush_error_logged = true;
             }
-            shown_taps = taps;
             shown_kps  = kps;
             shown_paws = (int)paws;
         }

@@ -9,7 +9,7 @@
 #include "sh1106.h"
 #include "bongo_frame.h"
 
-void ui_draw(uint32_t taps, uint32_t kps, ui_paw_t paw)
+void ui_draw(uint32_t kps, ui_paw_t paw)
 {
     const unsigned char *frame =
         (paw == UI_PAW_LEFT)  ? left_paw  :

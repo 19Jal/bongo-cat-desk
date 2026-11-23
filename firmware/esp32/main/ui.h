@@ -8,4 +8,4 @@ typedef enum {
 } ui_paw_t;
 
 /* Draws one frame into the SH1106 framebuffer (call sh1106_flush() afterwards). */
-void ui_draw(uint32_t taps, uint32_t kps, ui_paw_t paw);
+void ui_draw(uint32_t kps, ui_paw_t paw);
